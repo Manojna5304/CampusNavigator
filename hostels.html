@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Finder</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            padding-top: 56px;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        .navbar-light {
+            background-color: #e3f2fd;
+        }
+
+        .navbar-light .navbar-brand,
+        .navbar-light .nav-link,
+        .navbar-light .navbar-toggler-icon {
+            color: #343a40;
+        }
+
+        .dropdown-menu {
+            background-color: #e3f2fd;
+        }
+
+        .dropdown-item {
+            color: #343a40;
+        }
+
+        .dropdown-item:hover {
+            background-color: #d1ecf1;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            color: #0056b3;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #343a40;
+        }
+
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .nav-link {
+            font-size: 1.1rem;
+        }
+
+        .section-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-align: center;
+            font-weight: 700;
+            color: #0056b3;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .btn-primary {
+            background-color: #0056b3;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #003f8f;
+        }
+
+        .form-control {
+            border-color: #0056b3;
+        }
+
+        .form-control:focus {
+            border-color: #003f8f;
+            box-shadow: none;
+        }
+
+        .btn-outline-success {
+            color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .btn-outline-success:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        .logo-img {
+            background-color: #e3f2fd; /* Matches the navbar background */
+        }
+
+        /* Custom CSS for gap after every 3 cards */
+        .row > .col-md-4:nth-child(3n) {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYqEl6V6hkx4q91rlua8cgk14BxO2a4Ybung&s" alt="LabFinder Logo" class="logo-img" height="30">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input id="myInput" onkeyup="search()" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button type="button" onclick="startRecognition()" class="btn btn-outline-success my-2 my-sm-0">
+                    <i class="fas fa-microphone"></i>
+                </button>
+            </form>
+        </div>
+    </nav>
+
+    <div id="food" class="container">
+        <h1 class="section-title">HOSTELS</h1>
+        <div class="row">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="vaidehi.JPG" alt="YUMMI">
+                    <div class="card-body">
+                        <h5 class="card-title">Vaidhehi Hostel</h5>
+                        
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=16.5683680, 81.5233291" class="btn btn-primary">Navigate Location</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="bhargavi.png" alt="MAGGI POINT">
+                    <div class="card-body">
+                        <h5 class="card-title">Bhargavi Hostel</h5>
+                        
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=16.5683680, 81.5233291" class="btn btn-primary">Navigate Location</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="./asserts/bhuvana.JPG" alt="CENTRAL SQUARE">
+                    <div class="card-body">
+                        <h5 class="card-title">Bhuvana Hostel</h5>
+                        
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=16.5683680, 81.5233291" class="btn btn-primary">Navigate Location</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Gap after every 3 cards -->
+            <div class="w-100 d-none d-md-block"></div>
+            <!-- Card 4 -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="./asserts/IMG_2681.JPG" alt="BAKERY">
+                    <div class="card-body">
+                        <h5 class="card-title">Vaishnavi Hostel</h5>
+                        
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=16.5683680, 81.5233291" class="btn btn-primary">Navigate Location</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="neelima.JPG" alt="MILK PARLOUR">
+                    <div class="card-body">
+                        <h5 class="card-title">Neelima Hostel</h5>
+                        
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=16.5683680, 81.5233291" class="btn btn-primary">Navigate Location</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="nirmala.JPG" alt="FRANKIE POINT">
+                    <div class="card-body">
+                        <h5 class="card-title">Nirmala Hostel</h5>
+                        
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=16.5683680, 81.5233291" class="btn btn-primary">Navigate Location</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Gap after every 3 cards -->
+            <div class="w-100 d-none d-md-block"></div>
+            <!-- Card 7 -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="mrudula.JPG" alt="ICE CREAM POINT">
+                    <div class="card-body">
+                        <h5 class="card-title">Mrudula Hostel</h5>
+                        
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=16.5683680, 81.5233291" class="btn btn-primary">Navigate Location</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 8 -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="manasa.JPG" alt="JUICE POINT">
+                    <div class="card-body">
+                        <h5 class="card-title">Manasa Hostel</h5>
+                        
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=16.5683680, 81.5233291" class="btn btn-primary">Navigate Location</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 9 -->
+            
+        </div>
+    </div>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBkHhRs5c6eIE00ucW+Laevo5hPLGxCk5gfsF/eJe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+d7f6Tz+7KsJgC3dNf4M5bbY5iwZXt0C+eG7lgzzcGk5t4Eck" crossorigin="anonymous"></script>
+    <script>
+        function search() {
+            var input, filter, cards, cardContainer, title, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            cardContainer = document.getElementById("food");
+            cards = cardContainer.getElementsByClassName("card");
+            for (i = 0; i < cards.length; i++) {
+                title = cards[i].querySelector(".card-body h5.card-title");
+                if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                    cards[i].parentElement.style.display = "";
+                } else {
+                    cards[i].parentElement.style.display = "none";
+                }
+            }
+        }
+
+        function startRecognition() {
+            if ('webkitSpeechRecognition' in window) {
+                var recognition = new webkitSpeechRecognition();
+                recognition.continuous = false;
+                recognition.interimResults = false;
+                recognition.lang = 'en-US';
+                recognition.start();
+
+                recognition.onresult = function(event) {
+                    var input = document.getElementById("myInput");
+                    input.value = event.results[0][0].transcript;
+                    search();
+                };
+
+                recognition.onerror = function(event) {
+                    console.error("Speech recognition error", event);
+                };
+
+                recognition.onend = function() {
+                    console.log("Speech recognition ended");
+                };
+            } else {
+                alert("Speech recognition is not supported in this browser.");
+            }
+        }
+    </script>
+</body>
+</html>

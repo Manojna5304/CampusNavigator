@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Navigation</title>
+    <link rel="stylesheet" href="menustyles.css">
+    <link rel="stylesheet" href="chatty.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="vishnulogo.png" alt="Logo" class="logo"> <!-- Add the path to your logo image -->
+        <input type="text" class="search-bar" placeholder="Search...">
+    </nav>
+    <div class="main-content">
+        <div class="container">
+            <a  href="index.html"><div class="block" id="academics">Labs</div></a>
+            <a href="food_court.html" ><div class="block" id="hostels">Food</div></a>
+            <a href="hostels.html"><div class="block" id="labs">Hostels</div></a>
+            <a href="other.html"><div class="block" id="other-facilities">Other Facilities</div></a>
+        </div>
+    </div>
+    <div id="chatbot" class="chatbot">
+        <div id="chatbotTitle" class="chatbot-title">
+            <img src="vishnulogo.png" alt="Chatbot Logo">
+            <span>Campus Navigation Chatbot</span>
+            <button class="chatbot-close" onclick="closeChat()">✕</button>
+        </div>
+        <div id="chatbotMessages" class="chatbot-messages"></div>
+        <div id="chatbotInput" class="chatbot-input"></div>
+    </div>
+    <button class="chatbot-button">Chatbot</button>
+    <script src="chatty.js"></script>
+</body>
+</html>
